@@ -1,0 +1,4 @@
+Contact: mailto:smrutiranjanpradhan.info@gmail.com
+Expires: 2027-05-23T00:00:00Z
+Canonical: https://smrutiranjanpradhan.co.in/.well-known/security.txt
+Preferred-Languages: en
