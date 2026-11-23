@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { connection } from "next/server";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,7 +12,8 @@ export const viewport: Viewport = {
   themeColor: "#101820",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  await connection();
   return (
     <html lang="en">
       <body>{children}</body>
