@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
 const email = "smrutiranjanpradhan.info@gmail.com";
@@ -52,13 +51,14 @@ export default function Home() {
               </div>
             </div>
             <figure className="portrait-frame">
-              <Image
+              {/* The local WebP is pre-sized and avoids framework-generated inline styles. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/portfolio-portrait.webp"
                 alt="Portrait of Smruti Ranjan Pradhan"
                 width={1120}
                 height={840}
-                preload
-                unoptimized
+                fetchPriority="high"
               />
             </figure>
           </div>
