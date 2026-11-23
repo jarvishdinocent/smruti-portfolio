@@ -277,6 +277,7 @@ export default function Home() {
             <a href={github}>GitHub</a>
             <a href={medium}>Medium</a>
             <a href={cv}>Résumé</a>
+            <a href="/.well-known/security.txt">Report a site vulnerability</a>
           </div>
         </div>
       </footer>
