@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 const links = [
+  ["Approach", "#method"],
+  ["Research", "#research"],
   ["Work", "#projects"],
-  ["About", "#about"],
-  ["Research & writing", "#research"],
 ];
 
 export default function Navbar() {
