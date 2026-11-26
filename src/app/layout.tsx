@@ -1,23 +1,20 @@
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
+import { portrait, profiles } from "./portfolio-content";
 
 const site = "https://smrutiranjanpradhan.co.in";
 const name = "Smruti Ranjan Pradhan";
-const description = "SOC Engineer working across threat hunting, digital forensics and incident response, penetration testing, threat intelligence, and OSINT.";
+const description = "Smruti Ranjan Pradhan investigates threats and works across threat intelligence, authorized web application testing, OSINT, and incident response.";
 
 const person = {
   "@context": "https://schema.org",
   "@type": "Person",
   name,
   url: site,
-  jobTitle: "SOC Engineer",
-  image: site + "/portfolio-portrait.webp",
-  sameAs: [
-    "https://www.linkedin.com/in/smruti-ranjan-pradhan-7b878514a",
-    "https://github.com/jarvishdinocent",
-    "https://medium.com/@sforsmruti",
-  ],
+  jobTitle: "Cybersecurity professional",
+  image: site + portrait,
+  sameAs: profiles.map(({ href }) => href),
 };
 
 export const metadata: Metadata = {
@@ -28,7 +25,7 @@ export const metadata: Metadata = {
     url: "/",
     title: name + " | Cybersecurity Portfolio",
     description,
-    images: [{ url: "/portfolio-portrait.webp", width: 1120, height: 840, alt: "Portrait of " + name }],
+    images: [{ url: portrait, width: 1120, height: 840, alt: "Portrait of " + name }],
   },
   twitter: { card: "summary_large_image" },
   title: "Smruti Ranjan Pradhan | Cybersecurity Portfolio",
@@ -37,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#101820",
+  themeColor: "#101f1a",
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
