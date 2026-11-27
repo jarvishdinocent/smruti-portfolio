@@ -28,6 +28,7 @@ const profilePage = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(site),
+  verification: { google: "73q5vxNADj8kGpptcJSds8dUTGB70FuyfFF_QQ0vonQ" },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
