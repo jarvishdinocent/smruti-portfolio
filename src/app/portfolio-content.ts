@@ -1,5 +1,5 @@
 export const email = "smrutiranjanpradhan.info@gmail.com";
-export const cv = "/Smruti-Ranjan-Pradhan-CV.pdf";
+export const cvRequest = `mailto:${email}?subject=CV%20access%20request`;
 export const portrait = "/portfolio-portrait.webp";
 
 export const medium = "https://medium.com/@sforsmruti";
