@@ -15,6 +15,9 @@ const specialties = [
   { name: "Threat Intelligence", icon: "network" },
   { name: "Web Application Security", icon: "globe" },
   { name: "OSINT", icon: "search" },
+  { name: "SOC Operations", icon: "monitor" },
+  { name: "DFIR", icon: "timeline" },
+  { name: "AI & Automation", icon: "chip" },
 ] as const;
 
 function SpecialtyIcon({ icon }: { icon: (typeof specialties)[number]["icon"] }) {
@@ -23,6 +26,9 @@ function SpecialtyIcon({ icon }: { icon: (typeof specialties)[number]["icon"] })
       {icon === "shield" && <path d="M12 2 4 5v6c0 5 3.4 8.2 8 11 4.6-2.8 8-6 8-11V5l-8-3ZM9 12l2 2 4-4" />}
       {icon === "network" && <><path d="M12 7v3m-2 4-4 3m8-3 4 3" /><circle cx="12" cy="12" r="2.5" /><circle cx="12" cy="4.5" r="2" /><circle cx="4.5" cy="18.5" r="2" /><circle cx="19.5" cy="18.5" r="2" /></>}
       {icon === "globe" && <><circle cx="12" cy="12" r="9" /><ellipse cx="12" cy="12" rx="4" ry="9" /><path d="M3 12h18M5 7.5h14M5 16.5h14" /></>}
+      {icon === "monitor" && <><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8m-4-4v4m-6-9h3l2-3 2 5 2-2h3" /></>}
+      {icon === "timeline" && <><path d="M12 3v4m0 4v3m0 4v3M5 7h3m8 7h3M5 20h3" /><circle cx="12" cy="9" r="2" /><circle cx="12" cy="16" r="2" /></>}
+      {icon === "chip" && <><rect x="5" y="5" width="14" height="14" rx="3" /><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3m-12-3h4m-2-2v4" /></>}
       {icon === "search" && <><circle cx="10" cy="10" r="6" /><path d="m14.5 14.5 5 5M7.5 11l1.5-2 1.5 2 2-3" /></>}
     </svg>
   );
@@ -37,9 +43,9 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="shell hero-layout">
             <div className="hero-copy">
-              <p className="identity">Smruti Ranjan Pradhan</p>
-              <h1 id="hero-title">I investigate threats, test assumptions, and turn evidence into <em>decisions.</em></h1>
-              <p className="hero-intro">I connect logs, indicators, application behavior, and public sources to determine what happened and what to do next.</p>
+              <p className="identity">Cybersecurity Analyst</p>
+              <h1 id="hero-title">Smruti Ranjan <em>Pradhan</em></h1>
+              <p className="hero-intro">Investigate threats. Act on evidence.</p>
               <ul className="hero-specialties" aria-label="Specialties">
                 {specialties.map(({ name, icon }) => (
                   <li key={name}><SpecialtyIcon icon={icon} /><span>{name}</span></li>
@@ -51,6 +57,14 @@ export default function Home() {
               </div>
             </div>
             <figure className="hero-portrait">
+              <svg className="portrait-geometry" width="0" height="0" aria-hidden="true" focusable="false">
+                <defs>
+                  <clipPath id="portrait-silhouette" clipPathUnits="objectBoundingBox">
+                    {/* Coordinates follow the subject outline in the uncropped 720 × 540 reference view. */}
+                    <path transform="scale(.0013888889 .0018518519)" d="M139 540Q150 517 170 509L204 472Q221 449 242 437Q251 401 273 378Q289 349 322 338L361 322 398 309Q406 305 405 299Q388 289 384 270L377 242 375 224Q366 216 373 198L372 187Q352 175 350 156Q343 144 346 127L350 111Q355 96 369 84Q380 71 397 68Q414 60 427 63L452 58 474 62Q499 64 512 79Q530 92 533 111L537 129Q537 153 523 181L521 183Q524 201 528 219Q531 229 524 238L523 257 522 269Q533 270 541 284L555 301Q575 299 595 309L646 330Q678 345 689 369Q704 395 705 432L708 540Z" />
+                  </clipPath>
+                </defs>
+              </svg>
               {/* The local WebP is pre-sized and renders without inline styles. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={portrait} alt="Portrait of Smruti Ranjan Pradhan" width={1120} height={840} fetchPriority="high" />
