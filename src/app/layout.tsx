@@ -5,15 +5,15 @@ import { portrait, profiles } from "./portfolio-content";
 
 const site = "https://smrutiranjanpradhan.co.in";
 const name = "Smruti Ranjan Pradhan";
-const title = name + " | Cybersecurity Analyst";
-const description = "Smruti Ranjan Pradhan is a cybersecurity analyst in Odisha, India. Explore his work in threat hunting, threat intelligence, web security, DFIR, and SOC automation.";
+const title = name + " | Independent Security Researcher";
+const description = "Smruti Ranjan Pradhan is an independent security researcher and cybersecurity analyst in Odisha, India. His work spans threat hunting, DFIR, and SOC automation.";
 
 const person = {
   "@type": "Person",
   "@id": site + "/#smruti-ranjan-pradhan",
   name,
   url: site,
-  jobTitle: "Cybersecurity Analyst",
+  jobTitle: "Independent Security Researcher",
   image: site + portrait,
   sameAs: profiles.map(({ href }) => href),
   description,
