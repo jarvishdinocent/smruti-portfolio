@@ -5,16 +5,25 @@ import { portrait, profiles } from "./portfolio-content";
 
 const site = "https://smrutiranjanpradhan.co.in";
 const name = "Smruti Ranjan Pradhan";
-const description = "Smruti Ranjan Pradhan investigates threats and works across threat intelligence, authorized web application testing, OSINT, and incident response.";
+const title = name + " | Cybersecurity Portfolio";
+const description = "Smruti Ranjan Pradhan is a cybersecurity professional focused on threat hunting, threat intelligence, web application security, OSINT, and incident investigation.";
 
 const person = {
-  "@context": "https://schema.org",
   "@type": "Person",
   name,
   url: site,
   jobTitle: "Cybersecurity professional",
   image: site + portrait,
   sameAs: profiles.map(({ href }) => href),
+  description,
+};
+
+const profilePage = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  name: title,
+  url: site + "/",
+  mainEntity: person,
 };
 
 export const metadata: Metadata = {
@@ -23,13 +32,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: name + " | Cybersecurity Portfolio",
+    title,
     description,
     images: [{ url: portrait, width: 1120, height: 840, alt: "Portrait of " + name }],
   },
   twitter: { card: "summary_large_image" },
-  title: "Smruti Ranjan Pradhan | Cybersecurity Portfolio",
-  icons: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAbklEQVR42mMUkFBgoCVgYqAxGLWAIGDBJTHzwmqSDEo3CMUqzoiZikg1Gr81LKS6iFQfM2FVR6rpcC2Y1owm00GcDwgmEiITwmgcjKYisoum0TgYxBbgKtaJLEtIqNEoqTgJ1Mk0r/RHU9FwswAAxmofZ7k4E/8AAAAASUVORK5CYII=",
+  title,
   description,
 };
 
@@ -47,7 +55,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           nonce={nonce}
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePage).replace(/</g, "\\u003c") }}
         />
         {children}
       </body>

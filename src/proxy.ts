@@ -9,6 +9,8 @@ export function proxy(request: NextRequest) {
     `script-src 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ""}`,
     isDev ? "style-src 'self' 'unsafe-inline'" : `style-src 'self' 'nonce-${nonce}'`,
     "img-src 'self' data:",
+    "script-src-attr 'none'",
+    ...(isDev ? [] : ["style-src-attr 'none'"]),
     "font-src 'self'",
     isDev ? "connect-src 'self' ws: wss:" : "connect-src 'self'",
     "base-uri 'none'",
