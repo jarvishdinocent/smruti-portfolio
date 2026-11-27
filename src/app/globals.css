@@ -55,13 +55,18 @@ img { display: block; max-width: 100%; }
 .button-secondary { color: var(--text); border-color: #667f70; }
 .button-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-.hero-portrait { position: relative; isolation: isolate; }
+.hero-portrait {
+  position: relative;
+  isolation: isolate;
+  mask-image: linear-gradient(to bottom, #000 70%, transparent 94%),
+    linear-gradient(to right, #000 92%, transparent 100%);
+  mask-composite: intersect;
+}
 .portrait-geometry { position: absolute; }
 .hero-portrait img {
   width: 100%;
   height: auto;
-  clip-path: url("#portrait-silhouette");
-  mask-image: linear-gradient(to bottom, #000 71%, transparent 100%);
+  mask-image: url("#portrait-silhouette");
 }
 
 .section { padding-block: clamp(3.5rem, 7.1vw, 7rem); border-top: 1px solid var(--line); }
@@ -196,7 +201,7 @@ img { display: block; max-width: 100%; }
   --button-ink: #fff;
   --button-hover: #064632;
   --hero-glow: #d7eee1;
-  --hero-contour: #34694f20;
+  --hero-contour: #34694f12;
 }
 
 .paper { color-scheme: inherit; }

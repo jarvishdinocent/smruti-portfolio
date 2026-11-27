@@ -43,9 +43,9 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="shell hero-layout">
             <div className="hero-copy">
-              <p className="identity">Cybersecurity Analyst</p>
+              <p className="identity">Independent Security Researcher</p>
               <h1 id="hero-title">Smruti Ranjan <em>Pradhan</em></h1>
-              <p className="hero-intro">Investigate threats. Act on evidence.</p>
+              <p className="hero-intro">Follow the traces attackers leave behind.</p>
               <ul className="hero-specialties" aria-label="Specialties">
                 {specialties.map(({ name, icon }) => (
                   <li key={name}><SpecialtyIcon icon={icon} /><span>{name}</span></li>
@@ -59,10 +59,16 @@ export default function Home() {
             <figure className="hero-portrait">
               <svg className="portrait-geometry" width="0" height="0" aria-hidden="true" focusable="false">
                 <defs>
-                  <clipPath id="portrait-silhouette" clipPathUnits="objectBoundingBox">
+                  <filter id="portrait-feather" x="0" y="0" width="1" height="1" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox">
+                    <feMorphology operator="erode" radius=".008 .0107" />
+                    <feGaussianBlur stdDeviation=".0035 .0047" />
+                  </filter>
+                  <mask id="portrait-silhouette" x="0" y="0" width="1" height="1" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox" mask-type="alpha">
                     {/* Coordinates follow the subject outline in the uncropped 720 × 540 reference view. */}
-                    <path transform="scale(.0013888889 .0018518519)" d="M139 540Q150 517 170 509L204 472Q221 449 242 437Q251 401 273 378Q289 349 322 338L361 322 398 309Q406 305 405 299Q388 289 384 270L377 242 375 224Q366 216 373 198L372 187Q352 175 350 156Q343 144 346 127L350 111Q355 96 369 84Q380 71 397 68Q414 60 427 63L452 58 474 62Q499 64 512 79Q530 92 533 111L537 129Q537 153 523 181L521 183Q524 201 528 219Q531 229 524 238L523 257 522 269Q533 270 541 284L555 301Q575 299 595 309L646 330Q678 345 689 369Q704 395 705 432L708 540Z" />
-                  </clipPath>
+                    <g filter="url(#portrait-feather)">
+                      <path fill="white" transform="scale(.0013888889 .0018518519)" d="M139 540Q150 517 170 509L204 472Q221 449 242 437Q251 401 273 378Q289 349 322 338L361 322 398 309Q406 305 405 299Q388 289 384 270L377 242 375 224Q366 216 373 198L372 187Q352 175 350 156Q343 144 346 127L350 111Q355 96 369 84Q380 71 397 68Q414 60 427 63L452 58 474 62Q499 64 512 79Q530 92 533 111L537 129Q537 153 523 181L521 183Q524 201 528 219Q531 229 524 238L523 257 522 269Q533 270 541 284L555 301Q575 299 595 309L646 330Q678 345 689 369Q704 395 705 432L708 540Z" />
+                    </g>
+                  </mask>
                 </defs>
               </svg>
               {/* The local WebP is pre-sized and renders without inline styles. */}
